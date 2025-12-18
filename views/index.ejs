@@ -7,5 +7,23 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+
+    <h2>Environment Variables</h2>
+    <table border="1" cellpadding="5" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Object.keys(env).sort().forEach(function(key) { %>
+        <tr>
+          <td><strong><%= key %></strong></td>
+          <td><%= env[key] %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
   </body>
 </html>
